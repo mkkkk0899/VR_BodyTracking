@@ -1,7 +1,9 @@
 using UnityEngine;
+using System.Reflection;
 
 /// <summary>
-/// OVRUnityHumanoidSkeletonRetargeterに位置オフセットを適用するスクリプト
+/// 手と腕全体に位置オフセットを適用するスクリプト
+/// 手首だけでなく、前腕・上腕にもオフセットを適用することで、腕が伸びる問題を回避します
 /// </summary>
 public class HandPositionOffset : MonoBehaviour
 {
@@ -14,9 +16,14 @@ public class HandPositionOffset : MonoBehaviour
     public OVRUnityHumanoidSkeletonRetargeter skeletonRetargeter;
 
     private Animator _targetAnimator;
-    private Transform _hipsTransform;
-    private Vector3 _originalPosition;
+    private Transform _leftHand;
+    private Transform _rightHand;
+    private Transform _leftLowerArm;
+    private Transform _rightLowerArm;
+    private Transform _leftUpperArm;
+    private Transform _rightUpperArm;
     private bool _isInitialized = false;
+    private Vector3 _lastPositionOffset = Vector3.zero;
 
     void Start()
     {
@@ -30,11 +37,14 @@ public class HandPositionOffset : MonoBehaviour
             return;
         }
 
-        // Hipsにオフセットを適用（リターゲティング後）
-        if (_hipsTransform != null)
+        // オフセットが変更された場合、適用
+        if (_lastPositionOffset != positionOffset)
         {
-            _hipsTransform.position = _hipsTransform.position + positionOffset;
+            _lastPositionOffset = positionOffset;
         }
+
+        // 腕全体（上腕・前腕・手）にオフセットを適用
+        ApplyArmOffset();
     }
 
     /// <summary>
@@ -54,7 +64,6 @@ public class HandPositionOffset : MonoBehaviour
         }
 
         // ターゲットのAnimatorを取得
-        // OVRUnityHumanoidSkeletonRetargeterは同じGameObjectにAnimatorを必要とする
         _targetAnimator = skeletonRetargeter.GetComponent<Animator>();
         if (_targetAnimator == null)
         {
@@ -62,16 +71,58 @@ public class HandPositionOffset : MonoBehaviour
             return;
         }
 
-        // HumanoidのHipsボーンを取得
-        _hipsTransform = _targetAnimator.GetBoneTransform(HumanBodyBones.Hips);
-        if (_hipsTransform == null)
+        // 左右の手・前腕・上腕のボーンを取得
+        _leftHand = _targetAnimator.GetBoneTransform(HumanBodyBones.LeftHand);
+        _rightHand = _targetAnimator.GetBoneTransform(HumanBodyBones.RightHand);
+        _leftLowerArm = _targetAnimator.GetBoneTransform(HumanBodyBones.LeftLowerArm);
+        _rightLowerArm = _targetAnimator.GetBoneTransform(HumanBodyBones.RightLowerArm);
+        _leftUpperArm = _targetAnimator.GetBoneTransform(HumanBodyBones.LeftUpperArm);
+        _rightUpperArm = _targetAnimator.GetBoneTransform(HumanBodyBones.RightUpperArm);
+
+        if (_leftHand == null && _rightHand == null)
         {
-            Debug.LogError("Hipsボーンが見つかりません");
+            Debug.LogError("左手と右手のボーンが見つかりません");
             return;
         }
 
         _isInitialized = true;
-        Debug.Log($"HandPositionOffset initialized. Target: {_targetAnimator.gameObject.name}, Hips: {_hipsTransform.name}");
+        _lastPositionOffset = positionOffset;
+        Debug.Log($"HandPositionOffset initialized. Target: {_targetAnimator.gameObject.name}");
+    }
+
+    /// <summary>
+    /// 腕全体にオフセットを適用（リターゲティング後）
+    /// 上腕→前腕→手の順で適用することで、腕が伸びずに全体が移動します
+    /// </summary>
+    private void ApplyArmOffset()
+    {
+        // 左腕にオフセット適用
+        if (_leftUpperArm != null)
+        {
+            _leftUpperArm.position += positionOffset;
+        }
+        if (_leftLowerArm != null)
+        {
+            _leftLowerArm.position += positionOffset;
+        }
+        if (_leftHand != null)
+        {
+            _leftHand.position += positionOffset;
+        }
+
+        // 右腕にオフセット適用
+        if (_rightUpperArm != null)
+        {
+            _rightUpperArm.position += positionOffset;
+        }
+        if (_rightLowerArm != null)
+        {
+            _rightLowerArm.position += positionOffset;
+        }
+        if (_rightHand != null)
+        {
+            _rightHand.position += positionOffset;
+        }
     }
 
     /// <summary>
@@ -80,6 +131,7 @@ public class HandPositionOffset : MonoBehaviour
     public void SetOffset(Vector3 offset)
     {
         positionOffset = offset;
+        _lastPositionOffset = offset;
     }
 
     /// <summary>
@@ -88,5 +140,6 @@ public class HandPositionOffset : MonoBehaviour
     public void ResetOffset()
     {
         positionOffset = Vector3.zero;
+        _lastPositionOffset = Vector3.zero;
     }
 }
