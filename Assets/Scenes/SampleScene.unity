@@ -406,11 +406,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74747097}
   m_Enabled: 1
---- !u!4 &87182225 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4561120607022680652, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
-  m_PrefabInstance: {fileID: 2122746729}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &134918331
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,11 +601,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 747969231759637169, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
   m_PrefabInstance: {fileID: 2122746729}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &163260948 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2602476977910518927, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
-  m_PrefabInstance: {fileID: 2122746729}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &204501325 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7148751045661663888, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
@@ -647,34 +637,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1140804531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &232357953 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -6561607385789494894, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
-  m_PrefabInstance: {fileID: 2122746729}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &273287898 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -3623969082641097362, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
-  m_PrefabInstance: {fileID: 2122746729}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &299489886 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7274305439215804138, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
   m_PrefabInstance: {fileID: 2122746729}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &350682228 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8101092651453953910, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
-  m_PrefabInstance: {fileID: 2122746729}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &352004994 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6240352001591222933, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
-  m_PrefabInstance: {fileID: 2122746729}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &388577544 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8551862674529089731, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
   m_PrefabInstance: {fileID: 2122746729}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &389404765
@@ -801,11 +771,6 @@ MonoBehaviour:
   installationRoutineCheckpoint:
     _installationRoutineId: 2063f481-1b63-4eda-9ee8-a00df98536bc
     _installationVariants: []
---- !u!4 &438318688 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -2253008213010457082, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
-  m_PrefabInstance: {fileID: 2122746729}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &535277021
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,16 +1020,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 74747098}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &826316566 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2973110398258057872, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
-  m_PrefabInstance: {fileID: 2122746729}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &862742984 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1456223227363024262, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
-  m_PrefabInstance: {fileID: 2122746729}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &902639922
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,11 +1457,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1498805483}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1199976338 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1783485037218042865, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
-  m_PrefabInstance: {fileID: 2122746729}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1210313734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,11 +1489,6 @@ Transform:
   - {fileID: 1042787725}
   m_Father: {fileID: 906338740}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1247354602 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2947625652879238364, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
-  m_PrefabInstance: {fileID: 2122746729}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1247749332 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
@@ -1824,98 +1769,6 @@ MonoBehaviour:
       onRightFootstep:
         m_PersistentCalls:
           m_Calls: []
---- !u!114 &1247749340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1247749332}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3d57aa72450502408bffff95e46b031, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isLeftHand: 0
-  enableCoordinateConversion: 1
-  coordinateSystemRotation: {x: 0, y: 180, z: 0}
-  thumbProximal: {fileID: 0}
-  thumbIntermediate: {fileID: 0}
-  thumbDistal: {fileID: 0}
-  indexProximal: {fileID: 0}
-  indexIntermediate: {fileID: 0}
-  indexDistal: {fileID: 0}
-  middleProximal: {fileID: 0}
-  middleIntermediate: {fileID: 0}
-  middleDistal: {fileID: 0}
-  ringProximal: {fileID: 0}
-  ringIntermediate: {fileID: 0}
-  ringDistal: {fileID: 0}
-  pinkyProximal: {fileID: 0}
-  pinkyIntermediate: {fileID: 0}
-  pinkyDistal: {fileID: 0}
-  thumbProximalOffset: {x: 0, y: 0, z: 0}
-  thumbIntermediateOffset: {x: 0, y: 0, z: 0}
-  thumbDistalOffset: {x: 0, y: 0, z: 0}
-  indexProximalOffset: {x: 0, y: 0, z: 0}
-  indexIntermediateOffset: {x: 0, y: 0, z: 0}
-  indexDistalOffset: {x: 0, y: 0, z: 0}
-  middleProximalOffset: {x: 0, y: 0, z: 0}
-  middleIntermediateOffset: {x: 0, y: 0, z: 0}
-  middleDistalOffset: {x: 0, y: 0, z: 0}
-  ringProximalOffset: {x: 0, y: 0, z: 0}
-  ringIntermediateOffset: {x: 0, y: 0, z: 0}
-  ringDistalOffset: {x: 0, y: 0, z: 0}
-  pinkyProximalOffset: {x: 0, y: 0, z: 0}
-  pinkyIntermediateOffset: {x: 0, y: 0, z: 0}
-  pinkyDistalOffset: {x: 0, y: 0, z: 0}
-  ovrSkeleton: {fileID: 0}
---- !u!114 &1247749341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1247749332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3d57aa72450502408bffff95e46b031, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isLeftHand: 1
-  enableCoordinateConversion: 1
-  coordinateSystemRotation: {x: 0, y: 270, z: 0}
-  thumbProximal: {fileID: 1645894622}
-  thumbIntermediate: {fileID: 826316566}
-  thumbDistal: {fileID: 862742984}
-  indexProximal: {fileID: 273287898}
-  indexIntermediate: {fileID: 1364216628}
-  indexDistal: {fileID: 1247354602}
-  middleProximal: {fileID: 350682228}
-  middleIntermediate: {fileID: 232357953}
-  middleDistal: {fileID: 438318688}
-  ringProximal: {fileID: 388577544}
-  ringIntermediate: {fileID: 1597555668}
-  ringDistal: {fileID: 87182225}
-  pinkyProximal: {fileID: 1691167029}
-  pinkyIntermediate: {fileID: 163260948}
-  pinkyDistal: {fileID: 1199976338}
-  thumbProximalOffset: {x: 0, y: 180, z: 0}
-  thumbIntermediateOffset: {x: 0, y: 0, z: 0}
-  thumbDistalOffset: {x: 0, y: 0, z: 0}
-  indexProximalOffset: {x: 0, y: 180, z: 0}
-  indexIntermediateOffset: {x: 0, y: 0, z: 0}
-  indexDistalOffset: {x: 0, y: 0, z: 0}
-  middleProximalOffset: {x: 0, y: 180, z: 0}
-  middleIntermediateOffset: {x: 0, y: 0, z: 0}
-  middleDistalOffset: {x: 0, y: 0, z: 0}
-  ringProximalOffset: {x: 0, y: 180, z: 0}
-  ringIntermediateOffset: {x: 0, y: 0, z: 0}
-  ringDistalOffset: {x: 0, y: 0, z: 0}
-  pinkyProximalOffset: {x: 0, y: 180, z: 0}
-  pinkyIntermediateOffset: {x: 0, y: 0, z: 0}
-  pinkyDistalOffset: {x: 0, y: 0, z: 0}
-  ovrSkeleton: {fileID: 35295752}
 --- !u!4 &1251405535 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -371820564018035333, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
@@ -1952,11 +1805,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1964135638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1364216628 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -7577000737936697375, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
-  m_PrefabInstance: {fileID: 2122746729}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1364648880
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,11 +1909,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -1583530509438879198, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
   m_PrefabInstance: {fileID: 2122746729}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1597555668 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6136773681064576928, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
-  m_PrefabInstance: {fileID: 2122746729}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1633100054
 GameObject:
   m_ObjectHideFlags: 0
@@ -2097,11 +1940,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 906338740}
   m_LocalEulerAnglesHint: {x: 105, y: -3, z: 0}
---- !u!4 &1645894622 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6891224833177221633, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
-  m_PrefabInstance: {fileID: 2122746729}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1658431569
 GameObject:
   m_ObjectHideFlags: 0
@@ -2188,11 +2026,6 @@ Camera:
 --- !u!4 &1690887533 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3742407835892290726, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
-  m_PrefabInstance: {fileID: 2122746729}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1691167029 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8135296687402105827, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
   m_PrefabInstance: {fileID: 2122746729}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1825306812
@@ -2481,12 +2314,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1247749338}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1247749341}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1247749340}
   m_SourcePrefab: {fileID: 100100000, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}
 --- !u!4 &2122746730 stripped
 Transform:
