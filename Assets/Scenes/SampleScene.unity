@@ -1903,11 +1903,12 @@ MonoBehaviour:
   avatarPinky0: {fileID: 749084471}
   avatarPinky1: {fileID: 2049399479}
   avatarPinky2: {fileID: 472920410}
-  thumbOffset: {x: -60, y: 100, z: 30}
-  indexOffset: {x: 0, y: 180, z: 0}
-  middleOffset: {x: 0, y: 180, z: 0}
-  ringOffset: {x: 0, y: 180, z: 0}
-  pinkyOffset: {x: 0, y: 180, z: -45}
+  thumbOffset: {x: -60, y: 100, z: -7.5}
+  indexOffset: {x: 19, y: 180, z: 0}
+  middleOffset: {x: 23, y: 180, z: 0}
+  ringOffset: {x: 13, y: 180, z: 0}
+  pinkyOffset: {x: 0.3, y: 180, z: -17}
+  invertSecondAndThirdJoints: 1
 --- !u!4 &1251405535 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -371820564018035333, guid: 950376484a6e26d4fbc9dc09612920ab, type: 3}

@@ -71,6 +71,10 @@ public class OVRHandTracker : MonoBehaviour
     [Tooltip("小指の付け根の回転オフセット")]
     public Vector3 pinkyOffset = Vector3.zero;
 
+    [Header("Invert Rotation (回転反転)")]
+    [Tooltip("第2関節と第3関節の回転を反転する")]
+    public bool invertSecondAndThirdJoints = false;
+
     void LateUpdate()
     {
         ApplyHandTracking();
@@ -83,38 +87,46 @@ public class OVRHandTracker : MonoBehaviour
     {
         // 親指（付け根にオフセット適用）
         ApplyRotationWithOffset(ovrThumb0, avatarThumb0, thumbOffset);
-        ApplyRotation(ovrThumb1, avatarThumb1);
-        ApplyRotation(ovrThumb2, avatarThumb2);
+        ApplyRotation(ovrThumb1, avatarThumb1, invertSecondAndThirdJoints);
+        ApplyRotation(ovrThumb2, avatarThumb2, invertSecondAndThirdJoints);
 
         // 人差し指（付け根にオフセット適用）
         ApplyRotationWithOffset(ovrIndex1, avatarIndex1, indexOffset);
-        ApplyRotation(ovrIndex2, avatarIndex2);
-        ApplyRotation(ovrIndex3, avatarIndex3);
+        ApplyRotation(ovrIndex2, avatarIndex2, invertSecondAndThirdJoints);
+        ApplyRotation(ovrIndex3, avatarIndex3, invertSecondAndThirdJoints);
 
         // 中指（付け根にオフセット適用）
         ApplyRotationWithOffset(ovrMiddle1, avatarMiddle1, middleOffset);
-        ApplyRotation(ovrMiddle2, avatarMiddle2);
-        ApplyRotation(ovrMiddle3, avatarMiddle3);
+        ApplyRotation(ovrMiddle2, avatarMiddle2, invertSecondAndThirdJoints);
+        ApplyRotation(ovrMiddle3, avatarMiddle3, invertSecondAndThirdJoints);
 
         // 薬指（付け根にオフセット適用）
         ApplyRotationWithOffset(ovrRing1, avatarRing1, ringOffset);
-        ApplyRotation(ovrRing2, avatarRing2);
-        ApplyRotation(ovrRing3, avatarRing3);
+        ApplyRotation(ovrRing2, avatarRing2, invertSecondAndThirdJoints);
+        ApplyRotation(ovrRing3, avatarRing3, invertSecondAndThirdJoints);
 
         // 小指（付け根にオフセット適用）
         ApplyRotationWithOffset(ovrPinky0, avatarPinky0, pinkyOffset);
-        ApplyRotation(ovrPinky1, avatarPinky1);
-        ApplyRotation(ovrPinky2, avatarPinky2);
+        ApplyRotation(ovrPinky1, avatarPinky1, invertSecondAndThirdJoints);
+        ApplyRotation(ovrPinky2, avatarPinky2, invertSecondAndThirdJoints);
     }
 
     /// <summary>
     /// OVRボーンの回転をアバターボーンに適用
     /// </summary>
-    private void ApplyRotation(Transform ovrBone, Transform avatarBone)
+    private void ApplyRotation(Transform ovrBone, Transform avatarBone, bool invert = false)
     {
         if (ovrBone != null && avatarBone != null)
         {
-            avatarBone.localRotation = ovrBone.localRotation;
+            if (invert)
+            {
+                // 回転を反転（逆回転を適用）
+                avatarBone.localRotation = Quaternion.Inverse(ovrBone.localRotation);
+            }
+            else
+            {
+                avatarBone.localRotation = ovrBone.localRotation;
+            }
         }
     }
 
