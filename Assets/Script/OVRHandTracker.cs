@@ -55,6 +55,22 @@ public class OVRHandTracker : MonoBehaviour
     public Transform avatarPinky1;
     public Transform avatarPinky2;
 
+    [Header("Rotation Offsets (回転オフセット)")]
+    [Tooltip("親指の付け根の回転オフセット")]
+    public Vector3 thumbOffset = Vector3.zero;
+
+    [Tooltip("人差し指の付け根の回転オフセット")]
+    public Vector3 indexOffset = Vector3.zero;
+
+    [Tooltip("中指の付け根の回転オフセット")]
+    public Vector3 middleOffset = Vector3.zero;
+
+    [Tooltip("薬指の付け根の回転オフセット")]
+    public Vector3 ringOffset = Vector3.zero;
+
+    [Tooltip("小指の付け根の回転オフセット")]
+    public Vector3 pinkyOffset = Vector3.zero;
+
     void LateUpdate()
     {
         ApplyHandTracking();
@@ -65,28 +81,28 @@ public class OVRHandTracker : MonoBehaviour
     /// </summary>
     private void ApplyHandTracking()
     {
-        // 親指
-        ApplyRotation(ovrThumb0, avatarThumb0);
+        // 親指（付け根にオフセット適用）
+        ApplyRotationWithOffset(ovrThumb0, avatarThumb0, thumbOffset);
         ApplyRotation(ovrThumb1, avatarThumb1);
         ApplyRotation(ovrThumb2, avatarThumb2);
 
-        // 人差し指
-        ApplyRotation(ovrIndex1, avatarIndex1);
+        // 人差し指（付け根にオフセット適用）
+        ApplyRotationWithOffset(ovrIndex1, avatarIndex1, indexOffset);
         ApplyRotation(ovrIndex2, avatarIndex2);
         ApplyRotation(ovrIndex3, avatarIndex3);
 
-        // 中指
-        ApplyRotation(ovrMiddle1, avatarMiddle1);
+        // 中指（付け根にオフセット適用）
+        ApplyRotationWithOffset(ovrMiddle1, avatarMiddle1, middleOffset);
         ApplyRotation(ovrMiddle2, avatarMiddle2);
         ApplyRotation(ovrMiddle3, avatarMiddle3);
 
-        // 薬指
-        ApplyRotation(ovrRing1, avatarRing1);
+        // 薬指（付け根にオフセット適用）
+        ApplyRotationWithOffset(ovrRing1, avatarRing1, ringOffset);
         ApplyRotation(ovrRing2, avatarRing2);
         ApplyRotation(ovrRing3, avatarRing3);
 
-        // 小指
-        ApplyRotation(ovrPinky0, avatarPinky0);
+        // 小指（付け根にオフセット適用）
+        ApplyRotationWithOffset(ovrPinky0, avatarPinky0, pinkyOffset);
         ApplyRotation(ovrPinky1, avatarPinky1);
         ApplyRotation(ovrPinky2, avatarPinky2);
     }
@@ -99,6 +115,19 @@ public class OVRHandTracker : MonoBehaviour
         if (ovrBone != null && avatarBone != null)
         {
             avatarBone.localRotation = ovrBone.localRotation;
+        }
+    }
+
+    /// <summary>
+    /// OVRボーンの回転にオフセットを加えてアバターボーンに適用
+    /// </summary>
+    private void ApplyRotationWithOffset(Transform ovrBone, Transform avatarBone, Vector3 offset)
+    {
+        if (ovrBone != null && avatarBone != null)
+        {
+            Quaternion ovrRotation = ovrBone.localRotation;
+            Quaternion offsetRotation = Quaternion.Euler(offset);
+            avatarBone.localRotation = ovrRotation * offsetRotation;
         }
     }
 }
