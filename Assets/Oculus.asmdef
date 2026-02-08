@@ -1,10 +1,8 @@
 {
-    "name": "VRBodyTracking",
+    "name": "Oculus",
     "rootNamespace": "",
     "references": [
-        "Oculus.VR",
-        "Oculus.Interaction",
-        "Oculus.Interaction.OVR"
+        "Oculus.VR"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
