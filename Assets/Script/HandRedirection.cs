@@ -24,17 +24,26 @@ public class HandRedirection : MonoBehaviour
     [Tooltip("仮想の手（表示される手のモデル）")]
     public Transform virtualHand;
 
+    [Tooltip("実際の手（トラッキングされる手のTransform）")]
+    public Transform realHand;
+
     [Header("Redirection Settings (リダイレクション設定)")]
     [Tooltip("オフセット量（メートル）デフォルト: 0.1m = 10cm")]
-    public float offsetDistance = 0.1f;
+    public float offsetDistance = 1.2f;
 
     [Tooltip("オフセットの方向")]
     public Vector3 offsetDirection = Vector3.up;
+
+    [Tooltip("この高さ（メートル）以上持ち上げたらリダイレクションを停止")]
+    public float liftThreshold = 0.5f;
 
     /// <summary>
     /// 対象オブジェクトをつかんでいるときtrue、離しているときfalse
     /// </summary>
     public bool isGrabbing { get; private set; }
+
+    private float _grabStartY;
+    private bool _redirectionStopped = true;
 
     /// <summary>
     /// 指定したオブジェクトを現在つかんでいるかどうかを返す
@@ -51,15 +60,38 @@ public class HandRedirection : MonoBehaviour
     void LateUpdate()
     {
         isGrabbing = IsGrabbingTarget();
-        // 接触判定に基づいてリダイレクション
-        if (collisionDetector.isColliding)
+
+        // つかみ始めた瞬間に開始位置を記録（実際の手の位置を使用）
+        if (isGrabbing && _redirectionStopped)
         {
-            // +10cm（または設定値）のオフセットを追加
-            Vector3 offset = offsetDirection.normalized * offsetDistance;
-            virtualHand.position = virtualHand.position + offset;
+            _grabStartY = realHand.position.y;
+            _redirectionStopped = false;
         }
 
-        Debug.Log("GRAB"+ isGrabbing);
+        // 離したらリセット
+        if (!isGrabbing)
+        {
+            _redirectionStopped = true;
+        }
+
+        // 50cm以上持ち上げたらリダイレクション停止
+        if (isGrabbing && !_redirectionStopped)
+        {
+            float liftHeight = realHand.position.y - _grabStartY;
+            if (liftHeight >= liftThreshold)
+            {
+                _redirectionStopped = true;
+            }
+        }
+
+        // リダイレクション適用（実際の手の移動量にオフセットを掛ける）
+        if (isGrabbing && !_redirectionStopped)
+        {
+            float delta = realHand.position.y - _grabStartY;
+            float redirectedY = _grabStartY + delta * offsetDistance;
+            Debug.Log("GRAB delta=" + delta + " offset=" + (delta * (offsetDistance - 1)));
+            virtualHand.position = new Vector3(virtualHand.position.x, redirectedY, virtualHand.position.z);
+        }
     }
 
 }
