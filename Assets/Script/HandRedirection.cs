@@ -57,7 +57,7 @@ public class HandRedirection : MonoBehaviour
             && _handGrabInteractor.SelectedInteractable == _targetInteractable;
     }
 
-    void LateUpdate()
+    void Update()
     {
         isGrabbing = IsGrabbingTarget();
 
@@ -90,7 +90,7 @@ public class HandRedirection : MonoBehaviour
             float delta = realHand.position.y - _grabStartY;
             float redirectedY = _grabStartY + delta * offsetDistance;
             Debug.Log("GRAB delta=" + delta + " offset=" + (delta * (offsetDistance - 1)));
-            virtualHand.position = new Vector3(virtualHand.position.x, redirectedY, virtualHand.position.z);
+            virtualHand.position = new Vector3(virtualHand.position.x, realHand.position.y + 0.05f, virtualHand.position.z);
         }
     }
 
